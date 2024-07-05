@@ -18,6 +18,10 @@ return new class extends Migration
             $table->integer('TPVaga')->nullable(false); //0:Presencial, 1:Remoto, 2:Hibrido
             $table->integer('TPContrato')->nullable(false); //0:CLT, 1:PJ, 2:Freelancer, 3: Cooperado
             $table->float('Salario')->default(0);
+            $table->string('Local')->nullable(false);
+            $table->integer('IDCategoria')->nullable(false);
+            $table->integer('QTVagas')->nullable(false);
+            $table->integer('IDEmpresa');
             $table->integer('STVaga')->default(1);
         });
     }
