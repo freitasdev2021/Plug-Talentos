@@ -19,6 +19,9 @@ Route::get('/Admin', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/Vaga/{id}',[VagasController::class,'vaga'])->name('Vaga');
+Route::post('/Vaga/Candidatar',[VagasController::class,'candidatar'])->name("Vaga/Candidatar");
+
 Route::middleware('auth')->group(function(){
     //CATEGORIAS
     Route::get('/Admin/Categorias',[CategoriasController::class,'index'])->name('Admin/Categorias');
@@ -34,6 +37,8 @@ Route::middleware('auth')->group(function(){
     Route::get('/Admin/Vagas/Cadastro/{id}',[VagasController::class,'cadastro'])->name('Admin/Vagas/Edit');
     Route::get('/Admin/Vagas/Cadastro',[VagasController::class,'cadastro'])->name('Admin/Vagas/Cadastro');
     Route::get('/Admin/Vagas',[VagasController::class,'indexAdm'])->name('Admin/Vagas');
+    Route::get('/Admin/Vagas/Candidaturas/{IDVaga}',[VagasController::class,'candidaturas'])->name('Admin/Vagas/Candidaturas');
+    Route::get('/Admin/Vagas/Candidaturas/Descarte/{IDCandidatura}',[VagasController::class,'descartarCandidatura'])->name('Admin/Vagas/Candidaturas/Descarte');
     Route::post('/Admin/Vagas/Save',[VagasController::class,'save'])->name('Admin/Vagas/Save');
     Route::get('/Admin/Vagas/Desativar/{id}',[VagasController::class,'desativarVaga'])->name('Admin/Vagas/Desativar');
     Route::get('/Admin/Vagas/Reativar/{id}',[VagasController::class,'reativarVaga'])->name('Admin/Vagas/Reativar');

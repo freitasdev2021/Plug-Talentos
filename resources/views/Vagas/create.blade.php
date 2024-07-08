@@ -33,19 +33,19 @@
                             <label>Modalidade</label>
                             <select name="TPVaga" class="form-select" required>
                                 <option value="">Selecione</option>
-                                <option value="0" {{isset($Registro) && $Registro->TPVaga == 0 ? 'selected' : ''}}>Presencial</option>
-                                <option value="1" {{isset($Registro) && $Registro->TPVaga == 1 ? 'selected' : ''}}>Remoto</option>
-                                <option value="2" {{isset($Registro) && $Registro->TPVaga == 2 ? 'selected' : ''}}>Hibrido</option>
+                                <option value="Presencial" {{isset($Registro) && $Registro->TPVaga == 'Presencial' ? 'selected' : ''}}>Presencial</option>
+                                <option value="Remoto" {{isset($Registro) && $Registro->TPVaga == 'Remoto' ? 'selected' : ''}}>Remoto</option>
+                                <option value="Híbrido" {{isset($Registro) && $Registro->TPVaga == 'Híbrido' ? 'selected' : ''}}>Hibrido</option>
                             </select>
                         </div>
                         <div class="col-sm-4">
                             <label>Tipo do Contrato</label>
                             <select name="TPContrato" class="form-select" required>
                                 <option value="">Selecione</option>
-                                <option value="0" {{isset($Registro) && $Registro->TPContrato == 0 ? 'selected' : ''}}>CLT</option>
-                                <option value="1" {{isset($Registro) && $Registro->TPContrato == 1 ? 'selected' : ''}}>PJ</option>
-                                <option value="2" {{isset($Registro) && $Registro->TPContrato == 2 ? 'selected' : ''}}>Freelancer</option>
-                                <option value="3" {{isset($Registro) && $Registro->TPContrato == 3 ? 'selected' : ''}}>Cooperado</option>
+                                <option value="CLT" {{isset($Registro) && $Registro->TPContrato == 'CLT' ? 'selected' : ''}}>CLT</option>
+                                <option value="PJ" {{isset($Registro) && $Registro->TPContrato == 'PJ' ? 'selected' : ''}}>PJ</option>
+                                <option value="Freelancer" {{isset($Registro) && $Registro->TPContrato == 'Freelancer' ? 'selected' : ''}}>Freelancer</option>
+                                <option value="Cooperado" {{isset($Registro) && $Registro->TPContrato == 'Cooperado' ? 'selected' : ''}}>Cooperado</option>
                             </select>
                         </div>
                         <div class="col-sm-4">
