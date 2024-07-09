@@ -9,11 +9,12 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('welcome',[
-        "Categorias" => []
+        "Categorias" => DB::select('SELECT COUNT(v.id) as Vagas,c.id,c.NMCategoria FROM categorias c LEFT JOIN vagas v ON(v.IDCategoria = c.id) GROUP BY c.id')
     ]);
 })->name('welcome');
 
 Route::get('/Vagas',[VagasController::class,'index'])->name('vagas');
+Route::get('/Contratar',[VagasController::class,'contratar'])->name('contratar');
 
 Route::get('/Admin', function () {
     return view('dashboard');

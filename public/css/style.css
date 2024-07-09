@@ -12,6 +12,22 @@ table {
     width: 100%;
 }
 
+.solucao{
+    width:100%;
+    background:orange;
+}
+
+.oquefazemos .oqueitem{
+    margin : 10px;
+    padding:0px;
+}
+
+.oquefazemos img{
+    width:100%;
+    padding:0px;
+    height:250px;
+}
+
 .centerText{
     text-align:center;
 }

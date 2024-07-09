@@ -41,7 +41,7 @@
             <div class="collapse navbar-collapse navegacao" id="navbarCollapse" style="margin-right:10px;">
                 <div class="navbar-nav ms-auto p-4 p-lg-0">
                     <a href="{{route('welcome')}}" class="nav-item nav-link oswald">Home</a>
-                    <a href="index.html" class="nav-item nav-link oswald">Quero Contratar</a>
+                    <a href="{{route('contratar')}}" class="nav-item nav-link oswald">Quero Contratar</a>
                     <a href="{{route('vagas')}}" class="nav-item nav-link oswald">Quero Trabalhar</a>
                     <a href="index.html" class="nav-item nav-link oswald">Plug Academy</a>
                     <a href="index.html" class="nav-item nav-link oswald">Blog</a>

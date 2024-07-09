@@ -66,6 +66,10 @@ class VagasController extends Controller
         ]);
     }
 
+    public function contratar(){
+        return view('contratar');
+    }
+
     public function candidatar(Request $request){
         try{
             $Req = $request->all();
