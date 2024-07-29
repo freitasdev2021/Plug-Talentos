@@ -15,6 +15,7 @@
                     <x-modulo rota="{{route('Admin/Empresas')}}" icon="fa-solid fa-building" endereco="Empresas" nome="Empresas"/>
                     <x-modulo rota="{{route('Admin/Categorias')}}" icon="fa-solid fa-list" endereco="Categorias" nome="Categorias"/>
                     <x-modulo rota="{{route('Admin/Vagas')}}" icon="fa-solid fa-person-chalkboard" endereco="Vagas" nome="Vagas Abertas"/>
+                    <x-modulo rota="{{route('Admin/Blog')}}" icon="fa-solid fa-person-chalkboard" endereco="Blog" nome="Blog"/>
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">

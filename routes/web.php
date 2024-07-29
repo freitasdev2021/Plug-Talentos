@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VagasController;
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\EmpresasController;
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,7 +23,10 @@ Route::get('/Admin', function () {
 
 Route::get('/Vaga/{id}',[VagasController::class,'vaga'])->name('Vaga');
 Route::post('/Vaga/Candidatar',[VagasController::class,'candidatar'])->name("Vaga/Candidatar");
-
+//BLOG
+Route::get('/PlugBlog',[BlogController::class,'blog'])->name('PlugBlog');
+Route::get('Blog/Post/{id}',[BlogController::class,'getPost'])->name('Blog/Post');
+//
 Route::middleware('auth')->group(function(){
     //CATEGORIAS
     Route::get('/Admin/Categorias',[CategoriasController::class,'index'])->name('Admin/Categorias');
@@ -43,11 +47,17 @@ Route::middleware('auth')->group(function(){
     Route::post('/Admin/Vagas/Save',[VagasController::class,'save'])->name('Admin/Vagas/Save');
     Route::get('/Admin/Vagas/Desativar/{id}',[VagasController::class,'desativarVaga'])->name('Admin/Vagas/Desativar');
     Route::get('/Admin/Vagas/Reativar/{id}',[VagasController::class,'reativarVaga'])->name('Admin/Vagas/Reativar');
+    //BLOG
+    Route::get('/Admin/Blog',[BlogController::class,'index'])->name('Admin/Blog');
+    Route::get('Admin/Blog/Post/{id}',[BlogController::class,'getPost'])->name('Admin/Blog/Post');
+    Route::get('Admin/Blog/Create',[BlogController::class,'createPost'])->name('Admin/Blog/Novo');
+    Route::get('Admin/Blog/Cadastro/{id}',[BlogController::class,'createPost'])->name('Admin/Blog/Cadastro');
+    Route::get('Admin/Blog/Delete/{id}',[BlogController::class,'deletePost'])->name('Admin/Blog/Delete');
+    Route::post('Admin/Blog/Save',[BlogController::class,'save'])->name('Admin/Blog/Save');
     //PERFIL
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    //
 });
 
 require __DIR__.'/auth.php';
