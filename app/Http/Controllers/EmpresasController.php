@@ -60,6 +60,7 @@ class EmpresasController extends Controller
             $mensagem = 'Empresa Cadastrada com Sucesso!';
             $status = 'success';
         }catch(\Throwable $th){
+            dd($th->getMessage());
             $mensagem = 'Falha no Cadastro'.$th->getMessage();
             $status = 'error';
         }finally{

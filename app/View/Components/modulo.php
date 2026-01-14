@@ -32,7 +32,8 @@ class modulo extends Component
     {
         $original_string = Route::currentRouteName();
         $partes = explode('/', $original_string);
-        $modulo = $partes[1];
+
+        $modulo = $partes[0];
 
         $active = "";
         if($modulo == $this->endereco){

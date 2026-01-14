@@ -17,6 +17,9 @@ class Empresas extends Model
         'Telefone',
         'Endereco',
         'UF',
-        'Cidade'
+        'Cidade',
+        'Bairro',
+        'Numero',
+        'Rua'
     ];
 }

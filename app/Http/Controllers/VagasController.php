@@ -75,7 +75,7 @@ class VagasController extends Controller
             $Req = $request->all();
             if($request->file('Curriculo')){
                 $Req['Curriculo'] = $request->file('Curriculo')->getClientOriginalName();
-                $request->Curriculo->storeAs('Curriculos',$Req['Curriculo']."_".$request->Email,'public');
+                $request->Curriculo->storeAs('Curriculos',$Req['Curriculo'],'public');
             }
             Candidaturas::create($Req);
             $status = 'success';
@@ -140,6 +140,7 @@ class VagasController extends Controller
             $mensagem = 'Vaga Cadastrada com Sucesso';
             $status = 'success';
         }catch(\Throwable $th){
+            dd($th->getMessage());
             $mensagem = 'Erro'.$th->getMessage();
             $status = 'error';
         }finally{

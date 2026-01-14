@@ -22,7 +22,7 @@
                                 <td>{{$c->Telefone}}</td>
                                 <td><a href="{{$c->Linkedin}}">{{$c->Linkedin}}</a></td>
                                 <td>
-                                    <a href="{{url('storage/Curriculos/'.$c->Curriculo)}}" download class="btn btn-primary">Baixar Currículo</a>
+                                    <a href="{{asset('storage/Curriculos/'.$c->Curriculo)}}" download class="btn btn-primary">Baixar Currículo</a>
                                     <button type="button" class="btn btn-danger descartarCandidatura" data-candidatura="{{route("Admin/Vagas/Candidaturas/Descarte",$c->id)}}">Descartar</button>
                                 </td>
                             </tr>

@@ -12,7 +12,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp text-center" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                     <a class="cat-item rounded p-4" href="{{route('Admin/Empresas/Edit',$e->id)}}">
                         <h6 class="mb-3">{{$e->NMEmpresa}}</h6>
-                        <img src="{{url("storage/Empresa_$e->CNPJ/$e->Foto")}}" width="150px" height="150px">
+                        <img src="{{ asset('storage/Empresa_'.$e->CNPJ.'/'.$e->Foto) }}" width="150px" height="150px">
                         <p class="mb-0">{{$e->Vagas}} Vagas abertas</p>
                     </a>
                 </div>

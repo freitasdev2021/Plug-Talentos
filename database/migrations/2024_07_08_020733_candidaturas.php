@@ -15,7 +15,6 @@ return new class extends Migration
             $table->id();
             $table->string('Candidato',30)->nullable(false);
             $table->string('Telefone',11)->nullable(false);
-            $table->string('Candidato',30)->nullable(false);
             $table->string('Linkedin',100)->nullable(true);
             $table->string('Curriculo',100)->nullable(true);
         });
