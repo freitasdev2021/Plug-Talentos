@@ -1,23 +1,19 @@
 <x-admplug>
-    <div class="container-xxl py-5">
-        <div class="container">
-            <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">Categorias</h1>
-            <!--CATEGORIA-->
-            <div class="col-sm-3">
-                <a class="btn bg-plug text-white" href="{{route('Admin/Categorias/Create')}}">Adicionar</a>
+   <div class="shadow p-3">
+      <a href="{{route('Admin/Categorias/Create')}}" class="btn bg-fr text-white">Adicionar</a>
+   </div>
+   <div>
+      <br/>
+      <div class="shadow p-3">
+        @foreach($Categorias as $c)
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">{{$c->NMCategoria}}</h5>
+                <p class="card-text">{{$c->Vagas}} Vagas</p>
+                <a href="{{route('Admin/Categorias/Edit',$c->id)}}" class="card-link">Editar</a>
             </div>
-            <br>
-            <div class="row g-4">
-                @foreach($Categorias as $c)
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                    <a class="cat-item rounded p-4" href="{{route('Admin/Categorias/Edit',$c->id)}}">
-                        <h6 class="mb-3">{{$c->NMCategoria}}</h6>
-                        <p class="mb-0">{{$c->Vagas}} Abertas</p>
-                    </a>
-                </div>
-                @endforeach
-            </div>
-            <!--FIM DA CATEGORIA-->
         </div>
-    </div>
+        @endforeach
+      </div>
+   </div>
 </x-admplug>

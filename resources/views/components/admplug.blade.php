@@ -7,7 +7,7 @@
     <!-- TOPO BRANCO (mesma largura da sidebar) -->
     <div class="p-3 topo-sidebar bg-white shadow-sm d-flex flex-column justify-content-center align-items-center text-center">
         <router-link to="/"><strong class="text-fr">PortalFreitas</strong></router-link>
-        <strong style="font-size:16px;">Publicações Oficiais</strong>
+        <strong style="font-size:16px;">Portal Institucional</strong>
     </div>
 
     <!-- TOPO AZUL -->
@@ -40,7 +40,11 @@
         <x-modulo rota="{{route('Admin/Empresas')}}" icon="fa-solid fa-building" endereco="Empresas" nome="Empresas"/>
         <x-modulo rota="{{route('Admin/Categorias')}}" icon="fa-solid fa-list" endereco="Categorias" nome="Categorias"/>
         <x-modulo rota="{{route('Admin/Vagas')}}" icon="fa-solid fa-person-chalkboard" endereco="Vagas" nome="Vagas Abertas"/>
-        <x-modulo rota="{{route('Admin/Blog')}}" icon="fa-solid fa-person-chalkboard" endereco="Blog" nome="Blog"/>
+        <x-modulo rota="{{route('Admin/Blog')}}" icon="fa-solid fa-computer-mouse" endereco="Blog" nome="Publicacoes"/>
+        <x-modulo rota="{{route('Admin/Site')}}" icon="fa-solid fa-globe" endereco="Site" nome="Configurações do Site"/>
+        <x-modulo rota="{{route('Admin/Ouvidoria')}}" icon="fa-solid fa-comment" endereco="Ouvidoria" nome="Ouvidoria"/>
+        <x-modulo rota="{{route('Admin/Licitacoes')}}" icon="fa-solid fa-file" endereco="Licitacoes" nome="Licitações"/>
+        <x-modulo rota="{{route('Admin/Diario')}}" icon="fa-solid fa-bullhorn" endereco="Diario" nome="Diário Oficial"/>
     </ul>
     <!-- PERFIL DO USUÁRIO -->
     <div class="mt-auto d-flex border-top border-light bg-white shadow-sm usuario">

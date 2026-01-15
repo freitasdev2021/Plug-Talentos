@@ -4,6 +4,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\VagasController;
 use App\Http\Controllers\CategoriasController;
 use App\Http\Controllers\EmpresasController;
+use App\Http\Controllers\SiteController;
+use App\Http\Controllers\OuvidoriaController;
+use App\Http\Controllers\DiarioController;
 use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -58,6 +61,14 @@ Route::middleware('auth')->group(function(){
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    //SITE
+    Route::get('Admin/Site',[SiteController::class,'index'])->name('Admin/Site');
+    //OUVIDORIA
+    Route::get('Admin/Ouvidoria',[OuvidoriaController::class,'index'])->name('Admin/Ouvidoria');
+    //PNCP
+    Route::get('Admin/Licitacoes',[LicitacoesController::class,'index'])->name('Admin/Licitacoes');
+    //DIARIO
+    Route::get('Admin/Diario',[DiarioController::class,'index'])->name('Admin/Diario');
 });
 
 require __DIR__.'/auth.php';
