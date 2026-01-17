@@ -11,12 +11,6 @@ use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('welcome',[
-        "Categorias" => DB::select('SELECT COUNT(v.id) as Vagas,c.id,c.NMCategoria FROM categorias c LEFT JOIN vagas v ON(v.IDCategoria = c.id) GROUP BY c.id')
-    ]);
-})->name('welcome');
-
 Route::get('/Vagas',[VagasController::class,'index'])->name('vagas');
 Route::get('/Contratar',[VagasController::class,'contratar'])->name('contratar');
 
@@ -31,6 +25,9 @@ Route::get('/PlugBlog',[BlogController::class,'blog'])->name('PlugBlog');
 Route::get('Blog/Post/{id}',[BlogController::class,'getPost'])->name('Blog/Post');
 //
 Route::middleware('auth')->group(function(){
+    Route::get('/', function () {
+        return view('dashboard');
+    })->name('dashboard');
     //CATEGORIAS
     Route::get('/Admin/Categorias',[CategoriasController::class,'index'])->name('Admin/Categorias');
     Route::post('/Admin/Categorias/Save',[CategoriasController::class,'save'])->name('Admin/Categorias/Save');

@@ -27,9 +27,10 @@
         <div>
             <strong id="horaAtual" class="text-white"></strong>
         </div>
-        <div>
-            <button class="btn btn-sm btn-danger" @click="logout">Sair</button>
-        </div>
+        <form action="{{route('logout')}}" id="formLogout" method="POST">
+            @csrf
+            <button class="nav_link sair btn btn-danger" type="submit">Sair</button>
+        </form>
     </div>
 
 </div>
